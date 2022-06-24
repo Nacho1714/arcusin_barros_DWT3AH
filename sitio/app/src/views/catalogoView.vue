@@ -101,7 +101,7 @@
 
                     <div class="row">
                         
-                        <div class="col-lg-3 text-center mb-4" v-for="(vinilo, index) in filtroCat">
+                        <div class="col-lg-3 text-center mb-4" v-for="(vinilo, index) in vinilos">
 
                             <div class="card border-0 bg-light mb-2">
                             
@@ -109,7 +109,7 @@
 
                                     <a href="#">
             
-                                        <img v-bind:src="vinilo.imagen" class="img-fluid" alt="vinilo.img_alt">
+                                        <img v-bind:src="('./src/assets/' + vinilo.imagen)" class="img-fluid" alt="vinilo.img_alt">
                                         
                                         <h3 class="h4">{{vinilo.titulo}}</h3>
                                         <p>${{vinilo.precio}}</p>

@@ -36,7 +36,7 @@
             "destacado": true,
             "titulo": "Greatest Hits (4PL)",
             "precio": 21950,
-            "imagen": "./img/big-tupac.jpg",
+            "imagen": "big-tupac.jpg",
             "img_alt":"Vinilo Greatest Hits, 2PAC",
         },
         {
@@ -45,7 +45,7 @@
             "destacado": false,
             "titulo": "Check Your Head",
             "precio": 8990,
-            "imagen": "./img/big-beastieboys.jpg",
+            "imagen": "big-beastieboys.jpg",
             "img_alt": "Vinilo Check Your Head, Beastie Boys",
         },
         {
@@ -54,7 +54,7 @@
             "destacado": false,
             "titulo": "Ison",
             "precio": 8990,
-            "imagen": "./img/big-ison.jpg",
+            "imagen": "big-ison.jpg",
             "img_alt":"Vinilo Ison, Sevdaliza",
         },
         {
@@ -63,7 +63,7 @@
             "destacado": false,
             "titulo": "Skilled Mechanics",
             "precio": 6750,
-            "imagen": "./img/big-tricky.jpg",
+            "imagen": "big-tricky.jpg",
             "img_alt": "Vinilo Skilled Mechanics, Tricky",
         },
         {
@@ -72,7 +72,7 @@
             "destacado": false,
             "titulo": "Foo Fighters",
             "precio": 6350,
-            "imagen": "./img/big-foofighters.jpg",
+            "imagen": "big-foofighters.jpg",
             "img_alt": " Vinilo Foo Fighters",
         },
         {
@@ -81,7 +81,7 @@
             "destacado": true,
             "titulo": "AM",
             "precio": 7450,
-            "imagen": "./img/big-am.jpg",
+            "imagen": "big-am.jpg",
             "img_alt":"Vinilo AM, Artic Monkeys",
         },
         {
@@ -90,7 +90,7 @@
             "destacado": false,
             "titulo": "Physical Graffiti",
             "precio": 8990,
-            "imagen": "./img/big-ledzeppelin.jpg",
+            "imagen": "big-ledzeppelin.jpg",
             "img_alt": "Vinilo Physical Graffiti, Led Zeppelin",
         },
         {
@@ -99,7 +99,7 @@
             "destacado": false,
             "titulo": "A Night at the Opera",
             "precio": 6750,
-            "imagen": "./img/big-queen.jpg",
+            "imagen": "big-queen.jpg",
             "img_alt":"Vinilo A Night at the Opera, Queen",
         },
         {
@@ -108,7 +108,7 @@
             "destacado": false,
             "titulo": "Fire Music",
             "precio": 7450,
-            "imagen": "./img/big-archie.jpg",
+            "imagen": "big-archie.jpg",
             "img_alt":"Vinilo Fire Music, Archie Shepp",
         },
         {
@@ -117,7 +117,7 @@
             "destacado": true,
             "titulo": "End to End",
             "precio": 6750,
-            "imagen": "./img/big-barre.jpg",
+            "imagen": "big-barre.jpg",
             "img_alt":"Vinilo End to End, Barre Phillips",
         },
         {
@@ -126,7 +126,7 @@
             "destacado": false,
             "titulo": "Blue World",
             "precio": 7450,
-            "imagen": "./img/big-john.jpg",
+            "imagen": "big-john.jpg",
             "img_alt": "Vinilo Blue World, John Coltrane",
         },
         {
@@ -135,7 +135,7 @@
             "destacado": true,
             "titulo": "Pangea",
             "precio": 8990,
-            "imagen": "./img/big-miles.jpg",
+            "imagen": "big-miles.jpg",
             "img_alt": "Vinilo Pangea, Miles Davis",
         }
       ],
