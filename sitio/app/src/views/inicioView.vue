@@ -1,7 +1,7 @@
 <template>
   <main>
     <bannerPrincipal/>
-    <cuatroCards :vinilos="vinilos"/>
+    <cuatroCards :vinilos="vinilosDestacados"/>
     <bannerSecundario/>
     <tresCards/>
     
@@ -28,6 +28,12 @@ export default {
       type: Array,
       required: true
     }
+  },
+
+  computed: {
+    vinilosDestacados() {
+      return this.vinilos.filter((vinilo) => vinilo.destacado);
+    },
   },
 
 }

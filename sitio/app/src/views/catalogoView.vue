@@ -98,7 +98,6 @@
                         </div> -->
    
                     </div>
-
                     <div class="row">
                         
                         <div class="col-lg-3 text-center mb-4" v-for="(vinilo, index) in vinilos">
@@ -109,7 +108,7 @@
 
                                     <a href="#">
             
-                                        <img v-bind:src="vinilo.imagen" class="img-fluid" alt="vinilo.img_alt">
+                                        <img v-bind:src="vinilo.imagen" class="img-fluid" :alt="vinilo.img_alt">
                                         
                                         <h3 class="h4">{{vinilo.titulo}}</h3>
                                         <p>${{vinilo.precio}}</p>
