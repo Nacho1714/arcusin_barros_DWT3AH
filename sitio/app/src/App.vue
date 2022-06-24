@@ -11,6 +11,8 @@
   import siteHeader from './components/siteHeader.vue';
   import 'bootstrap';
   import 'bootstrap/dist/css/bootstrap.min.css';
+  import "@fontsource/lobster"
+  import "@fontsource/rubik"
 
   export default {
     name: 'App',
@@ -21,5 +23,5 @@
 </script>
 
 <style>
-  
+
 </style>

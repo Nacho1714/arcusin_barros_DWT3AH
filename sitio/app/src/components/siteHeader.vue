@@ -38,5 +38,29 @@ export default {
 </script>
 
 <style>
-    
+    header{
+    border-bottom: 2px solid black;
+}
+.navbar-brand{
+    font-size: 2rem;
+    color: black;
+    font-family: 'Lobster', cursive;
+}
+.navbar-brand:hover{
+    color: black;
+}
+.nav-link{
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    font-family: 'Rubik', sans-serif;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding-left: 6.5rem;
+    font-weight: 550;
+    font-size: 1.2em;
+}
+.navbar-expand-lg:hover .navbar-nav:hover .nav-link:hover{
+    color: rgb(141, 56, 52);
+}
 </style>
