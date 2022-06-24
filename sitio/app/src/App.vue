@@ -25,8 +25,25 @@
       siteFooter
     }
   }
+
+// Acá hay que agregar el objeto data con los vinilos
+
+
+
 </script>
 
 <style>
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.titulo{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.subtitulo{
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.7);
+}
 </style>
