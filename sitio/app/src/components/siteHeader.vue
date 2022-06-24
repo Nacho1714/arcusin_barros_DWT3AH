@@ -2,10 +2,10 @@
     <header>
         <nav class=" container navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="/">
+                <router-link class="navbar-brand" to="/">
                     <img src="../assets/logo.png" alt="" width="" height="" class="d-inline-block align-text-top">
                     Play Vinilo'S
-                </a>
+                </router-link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
