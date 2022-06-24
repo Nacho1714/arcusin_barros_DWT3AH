@@ -1,0 +1,193 @@
+[
+    {
+        "vinilo_id": 0,
+        "vinilo_cat": 1,
+        "artista": "2PAC",
+        "titulo": "Greatest Hits (4PL)",
+        "precio": 21950,
+        "imagen": "tupac.jpg",
+        "img_alt":"Vinilo Greatest Hits, 2PAC",
+        "formato": "4 LP",
+        "sello":"Death Row Records",
+        "año":"2018",
+        "origen":"EU",
+        "destacado": true
+
+    },
+    {
+        "vinilo_id": 1,
+        "vinilo_cat": 1,
+        "artista": "Beastie Boys",
+        "titulo": "Check Your Head",
+        "precio": 8990,
+        "imagen": "beastieboys.jpg",
+        "img_alt": "Vinilo Check Your Head, Beastie Boys",
+        "formato": "Vinilo Doble",
+        "sello":"Capitol",
+        "año":"2009",
+        "origen":"USA",
+        "destacado": false
+
+
+    },
+    {
+        "vinilo_id": 2,
+        "vinilo_cat": 1,
+        "artista": "Sevdaliza",
+        "titulo": "Ison",
+        "precio": 8990,
+        "imagen": "ison.jpg",
+        "img_alt":"Vinilo Ison, Sevdaliza",
+        "formato": "Vinilo Doble",
+        "sello":"Music On Vinyl",
+        "año":"2017",
+        "origen":"EU",
+        "destacado": false
+
+
+    },
+    {
+        "vinilo_id": 3,
+        "vinilo_cat": 1,
+        "artista": "Tricky",
+        "titulo": "Skilled Mechanics",
+        "precio": 6750,
+        "imagen": "tricky.jpg",
+        "img_alt": "Vinilo Skilled Mechanics, Tricky",
+        "formato": "12 + CD",
+        "sello":"K7",
+        "año":"2016",
+        "origen":"USA",
+        "destacado": true
+
+
+    },
+    {
+        "vinilo_id": 4,
+        "vinilo_cat": 2,
+        "artista": "Foo Fighters",
+        "titulo": "Foo Fighters",
+        "precio": 6350,
+        "imagen": "foofighters.jpg",
+        "img_alt": " Vinilo Foo Fighters",
+        "formato": "12",
+        "sello":"RCA",
+        "año":"2011",
+        "origen":"USA",
+        "destacado": false
+
+
+    },
+    {
+        "vinilo_id": 5,
+        "vinilo_cat": 2,
+        "artista": "Artic Monkeys",
+        "titulo": "AM",
+        "precio": 7450,
+        "imagen": "am.jpg",
+        "img_alt":"Vinilo AM, Artic Monkeys",
+        "formato": "12",
+        "sello":"Domino",
+        "año":"2013",
+        "origen":"EU",
+        "destacado": false
+
+
+    },
+    {
+        "vinilo_id": 6,
+        "vinilo_cat": 2,
+        "artista": "Led Zeppelin",
+        "titulo": "Physical Graffiti",
+        "precio": 8990,
+        "imagen": "ledzeppelin.jpg",
+        "img_alt": "Vinilo Physical Graffiti, Led Zeppelin",
+        "formato": "Vinilo Doble",
+        "sello":"Rhino",
+        "año":"2015",
+        "origen":"USA",
+        "destacado": false
+
+
+    },
+    {
+        "vinilo_id": 7,
+        "vinilo_cat": 2,
+        "artista": "Queen",
+        "titulo": "A Night at the Opera",
+        "precio": 6750,
+        "imagen": "queen.jpg",
+        "img_alt":"Vinilo A Night at the Opera, Queen",
+        "formato": "12",
+        "sello":"Hollywood Records",
+        "año":"2008",
+        "origen":"USA & Canada",
+        "destacado": true
+
+
+    },
+    {
+        "vinilo_id": 8,
+        "vinilo_cat": 3,
+        "artista": "Archie Shepp",
+        "titulo": "Fire Music",
+        "precio": 7450,
+        "imagen": "archie.jpg",
+        "img_alt":"Vinilo Fire Music, Archie Shepp",
+        "formato": "12",
+        "sello":"Impulse Records",
+        "año":"2019",
+        "origen":"EU",
+        "destacado": true
+
+
+    },
+    {
+        "vinilo_id": 9,
+        "vinilo_cat": 3,
+        "artista": "Barre Phillips",
+        "titulo": "End to End",
+        "precio": 6750,
+        "imagen": "barre.jpg",
+        "img_alt":"Vinilo End to End, Barre Phillips",
+        "formato": "12",
+        "sello":"ECM Records",
+        "año":"2018",
+        "origen":"EU",
+        "destacado": false
+
+
+    },
+    {
+        "vinilo_id": 10,
+        "vinilo_cat": 3,
+        "artista": "John Coltrane",
+        "titulo": "Blue World",
+        "precio": 7450,
+        "imagen": "john.jpg",
+        "img_alt": "Vinilo Blue World, John Coltrane",
+        "formato": "12",
+        "sello":"Impulse!",
+        "año":"2019",
+        "origen":"USA",
+        "destacado": false
+
+
+    },
+    {
+        "vinilo_id": 11,
+        "vinilo_cat": 3,
+        "artista": "Miles Davis",
+        "titulo": "Pangea",
+        "precio": 8990,
+        "imagen": "miles.jpg",
+        "img_alt": "Vinilo Pangea, Miles Davis",
+        "formato": "Vinilo Doble",
+        "sello":"4 Men With Beards",
+        "año":"2012",
+        "origen":"USA",
+        "destacado": false
+
+
+    }
+]

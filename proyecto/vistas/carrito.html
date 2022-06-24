@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik&display=swap" rel="stylesheet"> 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../libs/bootstrap.min.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/logo.png">
+
+</head>
+<body>
+
+    <!-- Menú -->
+    <header>
+    
+        <nav class=" container navbar navbar-expand-lg">
+            
+            <div class="container">
+                
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../img/logo.png" alt="" width="" height="" class="d-inline-block align-text-top">
+                    Play Vinilo'S 
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="navbarScroll">
+                    
+                    <ul class="navbar-nav text-center">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">Inicio</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalogo.html">Catálogo</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="carrito.html">Carrito</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+            
+        </nav> 
+
+    </header>
+
+    <main class="container app">
+
+        <table class="table table-striped mt-5">
+
+            <thead>
+    
+                <tr>
+    
+                    <th scope="col">#</th>
+                    <th scope="col">Productos</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+    
+                </tr>
+    
+            </thead>
+    
+            <tbody>
+    
+                <!-- producto -->
+                <tr v-for="(vinilo, index) in carrito">
+
+                    <th scope="row">{{index}}</th>
+                    <td class="table__productos">
+                        <img v-bind:src="vinilo.imagen" v-bind:alt="vinilo.img_alt">
+                        <h6 class="title">{{vinilo.titulo}}</h6>
+                    </td>
+                    <td class="table__precio">
+                        <p>${{vinilo.precio}}</p>
+                    </td>
+                    <td class="table__cantidad">
+                        <input type="number" min="1" v-bind:value="vinilo.cantidad">
+                        <button v-on:click="eliminarCarrito(index)" class="delete btn btn-danger">x</button>
+                    </td>
+    
+                </tr>
+    
+            </tbody>
+    
+        </table>
+    
+        <div class="row mx-4 mb-5">
+    
+            <div class="col">
+    
+                <h3 class="itemCardTotal">Total: $ <span v-text="total"></span></h3>
+                <h3 class="itemCardTotal">Cantidad: <span v-text="contador"></span></h3>
+    
+            </div>
+    
+            <div class="col d-flex justify-content-end">
+    
+                <button class="btn btn-success">COMPRAR</button>
+    
+            </div>
+    
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="cnt-footer py-5">
+
+        <div class="container py-5">
+
+            <div class="row pt-5">
+
+                <div class="col-lg-12 m-auto">
+
+                    <div class="row">
+
+                        <div class="col-lg-9">
+
+                            <h2>¿Quieres enterarte que hay de nuevo?</h1>
+
+                            <input type="text" class="px-3" placeholder="Ingresa tu Email">
+
+                            <button class="btn2">Enviar</button>
+
+                        </div>
+
+                        <div class="col-lg-3 py-3">
+
+                            <h3 class="pb-3 text-center">Nuestras Redes</h3>
+
+                            <div class="d-flex justify-content-between">
+
+                                <a target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                                <a target="_blank" href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                                <a target="_blank" href="https://accounts.google.com/signin/v2/identifier?hl=es&continue=https%3A%2F%2Fwww.google.com%3Fhl%3Des&ec=GAlA8wE&flowName=GlifWebSignIn&flowEntry=AddSession"><i class="fab fa-google-plus"></i></a>
+
+                            </div>
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="text-center">Copyright ©2022 Todos los derechos reservados | Programación 2 - Barros Ignacio Ezequiel - Guggiari Micaela</p>
+
+        </div>
+
+    </footer>
+
+    <script src="../libs/vue.js"></script>
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
