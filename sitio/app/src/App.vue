@@ -6,8 +6,6 @@
   </div>
 </template>
 
-
-
 <script>
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -291,9 +289,4 @@ export default {
   border-radius: 60px;
 }
 </style>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-
 

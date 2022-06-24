@@ -14,11 +14,8 @@
                         <h2 class="subtitulo">Navega por nuestra gran variedad de vinilos</h2>
 
                         <div class="d-flex justify-content-between mt-3">
-
-                  
+       
                             <catalogo-buscador></catalogo-buscador>
-
-
 
                             <catalogo-categorias></catalogo-categorias>
 
@@ -60,8 +57,6 @@
                                         <button v-on:click="eliminar(index)" class="btn btn-danger button">Borrar</button>
                                     </div>
                                 </div>
-
-                                <!-- this.$root.methodName() -->
                             </div>
                         </div>                
                     </div>
@@ -86,6 +81,10 @@ export default {
             required: true
         }
     },
+    agregar: function(index){
+        this.$emit('loro', index);
+    }
+    // v-on:click="agregarCarrito(vinilo)"
 }
     
 

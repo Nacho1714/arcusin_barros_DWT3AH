@@ -335,6 +335,8 @@ const appVinilos = new Vue({
             }
         },
         agregarCarrito: function(vinilo) {
+
+            console.log(vinilo);
             
             if (this.carrito.length != 0) {
                 // carrito lleno, sumo si esta
