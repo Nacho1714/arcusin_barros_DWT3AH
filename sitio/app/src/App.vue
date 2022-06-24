@@ -1,7 +1,7 @@
 <template>
   <div>
     <siteHeader></siteHeader>
-    <router-view :vinilos="vinilos"></router-view>
+    <router-view :vinilos="vinilos" @evento="(id) => agregarCarrito(id)"></router-view>
     <siteFooter />
   </div>
 </template>
@@ -26,13 +26,16 @@ export default {
   },
 
   methods: {
-    agregarCarrito: function (vinilo) {
+    agregarCarrito: function (viniloid) {
+      console.log('agrego' + viniloid);
       if (this.carrito.length != 0) {
-        // carrito lleno, sumo si esta
+        // carrito no vacio
         let bandera = false;
 
+
+        // Si el vinilo ya esta en el carrito, solo se incrementa la cantidad
         this.carrito.forEach((item) => {
-          if (item.id == vinilo.vinilo_id) {
+          if (item.id == viniloid) {
             bandera = true;
             item.cantidad++;
             let objStr = JSON.stringify(this.carrito);
@@ -44,11 +47,11 @@ export default {
           //carrito lleno, no tiene el vinilo
           console.log("agrego");
           this.carrito.push({
-            id: vinilo.vinilo_id,
-            titulo: vinilo.titulo,
-            precio: vinilo.precio,
-            imagen: vinilo.imagen,
-            img_alt: vinilo.img_alt,
+            id: viniloid,
+            titulo: this.vinilos[viniloid].titulo,
+            precio: this.vinilos[viniloid].precio,
+            imagen: this.vinilos[viniloid].imagen,
+            img_alt: this.vinilos[viniloid].img_alt,
             cantidad: 1,
           });
 
@@ -72,11 +75,11 @@ export default {
         //carrito vacio
         console.log("agrego");
         this.carrito.push({
-          id: vinilo.vinilo_id,
-          titulo: vinilo.titulo,
-          precio: vinilo.precio,
-          imagen: vinilo.imagen,
-          img_alt: vinilo.img_alt,
+          id: viniloid,
+          titulo: this.vinilos[viniloid].titulo,
+          precio: this.vinilos[viniloid].precio,
+          imagen: this.vinilos[viniloid].imagen,
+          img_alt: this.vinilos[viniloid].img_alt,
           cantidad: 1,
         });
 
@@ -107,6 +110,7 @@ export default {
   data() {
     return {
       carrito: [],
+      total: 0,
 
       // filtro: '',
 
@@ -239,6 +243,17 @@ export default {
   font-size: 1.3rem;
   color: rgba(0, 0, 0, 0.7);
 }
+.btn0{
+    height: 40px;
+    width: 40%;
+    outline: none;
+    border: none;
+    background: rgb(141, 56, 52);
+    color: white;
+    border-radius: 60px;
+    font-weight: 700;
+}
+
 .btn1 {
   display: inline-block;
   margin: 20px;

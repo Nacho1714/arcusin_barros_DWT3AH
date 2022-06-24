@@ -34,14 +34,5 @@ export default {
     font-family: 'Rubik', sans-serif;
     border: 2px solid rgb(141, 56, 52);
 }
-.btn0{
-    height: 40px;
-    width: 40%;
-    outline: none;
-    border: none;
-    background: rgb(141, 56, 52);
-    color: white;
-    border-radius: 60px;
-    font-weight: 700;
-}
+
 </style>
