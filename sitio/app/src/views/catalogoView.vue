@@ -14,6 +14,25 @@
 
                         <catalogo-buscador :vinilos="vinilos" @filtrar="(vinilosFiltrados) => {this.vinilosNuevos = vinilosFiltrados}"></catalogo-buscador>
                             
+<!--                         <div class="d-flex justify-content-between mt-3">
+       
+                            <div class="form-check form-switch ms-3">
+
+                                <input v-on:click="mostrarForm" type="checkbox" class="form-check-input" id="check1">
+                                <label for="check1" class="form-check-label">Agregar</label>
+
+                            </div>
+
+                        </div>
+ -->
+                        <catalogoFormulario
+                            :formProp="form"
+                            :viniloEditar="viniloEditar"
+                            @viniloEditado="(vinilo)=> $emit('viniloEditado', vinilo)"
+                            @viniloNuevo="(vinilo)=> $emit('viniloNuevo', vinilo)">
+
+                        </catalogoFormulario>
+                
                     </div>
                     <div class="row">
                         
@@ -72,12 +91,20 @@
         props: {
             vinilos: Array
         },
+        methods: {
+            editar: function(index){
+                this.form = true;
+                this.viniloEditar = this.vinilos[index];              
+            },
+        },
         data() {
             return {
                 form: false,
+                viniloEditar: {},
                 vinilosNuevos: [], 
             };
         },
+
     }
     
 </script>
@@ -98,4 +125,5 @@
         font-weight: bolder;
         margin: 5px 0 0 0;
     }
+    
 </style>
