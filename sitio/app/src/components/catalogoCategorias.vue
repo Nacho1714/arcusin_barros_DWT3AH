@@ -18,7 +18,7 @@
 
 <script>
 export default {
-    name: 'catalogoBuscador',
+    name: 'catalogoCategorias',
 };
 </script>
 

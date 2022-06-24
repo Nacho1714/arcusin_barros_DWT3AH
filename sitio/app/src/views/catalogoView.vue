@@ -153,8 +153,15 @@ export default {
         catalogoBuscador,
         catalogoCategorias
     },
-    
+    props: {
+        vinilos: {
+            type: Array,
+            required: true
+        }
+    },
 }
+    
+
 </script>
 
 <style scoped>
