@@ -33,6 +33,7 @@
         {
             "vinilo_id": 0,
             "vinilo_cat": 1,
+            "destacado": true,
             "titulo": "Greatest Hits (4PL)",
             "precio": 21950,
             "imagen": "./img/big-tupac.jpg",
@@ -41,6 +42,7 @@
         {
             "vinilo_id": 1,
             "vinilo_cat": 1,
+            "destacado": false,
             "titulo": "Check Your Head",
             "precio": 8990,
             "imagen": "./img/big-beastieboys.jpg",
@@ -49,6 +51,7 @@
         {
             "vinilo_id": 2,
             "vinilo_cat": 1,
+            "destacado": false,
             "titulo": "Ison",
             "precio": 8990,
             "imagen": "./img/big-ison.jpg",
@@ -57,6 +60,7 @@
         {
             "vinilo_id": 3,
             "vinilo_cat": 1,
+            "destacado": false,
             "titulo": "Skilled Mechanics",
             "precio": 6750,
             "imagen": "./img/big-tricky.jpg",
@@ -65,6 +69,7 @@
         {
             "vinilo_id": 4,
             "vinilo_cat": 2,
+            "destacado": false,
             "titulo": "Foo Fighters",
             "precio": 6350,
             "imagen": "./img/big-foofighters.jpg",
@@ -73,6 +78,7 @@
         {
             "vinilo_id": 5,
             "vinilo_cat": 2,
+            "destacado": true,
             "titulo": "AM",
             "precio": 7450,
             "imagen": "./img/big-am.jpg",
@@ -81,6 +87,7 @@
         {
             "vinilo_id": 6,
             "vinilo_cat": 2,
+            "destacado": false,
             "titulo": "Physical Graffiti",
             "precio": 8990,
             "imagen": "./img/big-ledzeppelin.jpg",
@@ -89,6 +96,7 @@
         {
             "vinilo_id": 7,
             "vinilo_cat": 2,
+            "destacado": false,
             "titulo": "A Night at the Opera",
             "precio": 6750,
             "imagen": "./img/big-queen.jpg",
@@ -97,6 +105,7 @@
         {
             "vinilo_id": 8,
             "vinilo_cat": 3,
+            "destacado": false,
             "titulo": "Fire Music",
             "precio": 7450,
             "imagen": "./img/big-archie.jpg",
@@ -105,6 +114,7 @@
         {
             "vinilo_id": 9,
             "vinilo_cat": 3,
+            "destacado": true,
             "titulo": "End to End",
             "precio": 6750,
             "imagen": "./img/big-barre.jpg",
@@ -113,6 +123,7 @@
         {
             "vinilo_id": 10,
             "vinilo_cat": 3,
+            "destacado": false,
             "titulo": "Blue World",
             "precio": 7450,
             "imagen": "./img/big-john.jpg",
@@ -121,6 +132,7 @@
         {
             "vinilo_id": 11,
             "vinilo_cat": 3,
+            "destacado": true,
             "titulo": "Pangea",
             "precio": 8990,
             "imagen": "./img/big-miles.jpg",
@@ -184,6 +196,6 @@
       border-radius: 60px;
   }
 
-
+</style>
 
 

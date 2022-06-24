@@ -1,7 +1,7 @@
 <template>
   <main>
     <bannerPrincipal/>
-    <cuatroCards/>
+    <cuatroCards :vinilos="vinilos"/>
     <bannerSecundario/>
     <tresCards/>
     
@@ -22,6 +22,13 @@ export default {
     cuatroCards,
     bannerSecundario,
     tresCards,
-  }
+  },
+  props: {
+    vinilos: {
+      type: Array,
+      required: true
+    }
+  },
+
 }
 </script>

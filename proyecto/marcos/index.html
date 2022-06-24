@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#F0F4FA">
+
+    <title>Inicio - ElectroShop</title>
+</head>
+
+<body>
+    <header class="container-fluid navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-md">
+            <a class="navbar-brand" href="index.html"><img class="logo" src="./imgs/logo.png"
+                    alt="Logo de ElectroShop"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalogo">Listado</a></li>
+                    <li class="nav-item"><a class="nav-link" target="_blank" href="https://wa.link/2s70zu">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container-md pt-md-4 pb-md-4" id="app">
+        <section class="container-fluid pt-md-5 pb-md-5">
+            <div class="row justify-content-center gx-5">
+                <div class="col-12 col-md-6 mt-auto mb-auto order-1 order-md-0">
+                    <h1 class="align-left">Comprá electronica al mejor precio.</h1>
+                    <p>Productos de electronica con envio a tu casa!</p>
+                    <a href="#" class="btn btn-primary button button-outline" v-on:click="toggleShowCargar">Cargar Productos</a>
+                    <a href="#catalogo" class="btn btn-primary button">Ver Cátalogo</a>
+                </div>
+                <div class="col-12 col-md-6 mt-auto mb-auto order-0 order-md-1">
+                    <img src="./imgs/ElectroShop.svg" alt="">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container-fluid pt-5 pb-5" id="catalogo">
+            <h2>Listado de Productos</h2>
+            <div class="col-md-6 col-12 margin-auto">
+                <label class="d-inline" for="search">Buscá productos</label>
+                <input id="search" placeholder="Smart TV..." v-model="query" type="text">
+                <hr>
+            </div>
+            <div>
+                <h3 class="text-center">Busca por Categoría</h3>
+                <div class="row text-center" >
+                    <div class="col-12 mb-4 mt-3 ">
+                        <div class="categoria d-inline-block w-auto" :class="{active: isActive[index]}" v-on:click="setCategoriaActiva(categoria, index)" v-for="(categoria, index) in categorias">{{categoria}}</div>
+                        <div v-if="!(categoriaActiva === '')">
+                            <hr>
+                            <div class="categoria d-inline-block w-auto" v-on:click="setCategoriaActiva('todo')" >Mostrar Todo</div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="listado-filtrado" v-if="!(query == '') || !(categoriaActiva == '')">
+                <div class="col-12 col-md-6 mt-3 mb-3" v-for="(producto, index) in productosFilter">
+                    <article class="card">
+                        <img class="card-img-top" :src="'./imgs/' + producto.img" :alt="producto.img_desc">
+                        <div class="card-body">
+                            <h3 class="card-title align-center">{{producto.name}}</h3>
+                            <p class="card-text precio align-center">$ {{producto.precio}}</p>
+                            <a class="btn btn-primary button button-outline" v-on:click="details(producto.id)">Ver Detalle</a>
+                            <a class="btn btn-primary button" v-on:click="addToCart(producto.id)">Agregar al Carrito</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="row" id="listado" v-if="(query == '') && (categoriaActiva === '')">
+                <div class="col-12 col-md-6 mt-3 mb-3" v-for="(producto, index) in productos">
+                    <article class="card">
+                        <img class="card-img-top" :src="'./imgs/' + producto.img" :alt="producto.img_desc">
+                        <div class="card-body">
+                            <h3 class="card-title align-center">{{producto.name}}</h3>
+                            <p class="card-text precio align-center">$ {{producto.precio}}</p>
+                            <a class="btn btn-primary button button-outline" v-on:click="details(producto.id)">Ver Detalle</a>
+                            <a class="btn btn-primary button" v-on:click="addToCart(producto.id)">Agregar al Carrito</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Minicarrito -->
+        <div id="minicarritocontainer" class="container-fluid d-block position-fixed bottom-0">
+            <div class="container-md">
+                <div class="row text-center mb-3 mt-3">
+                    <p class="col-md-6"><b>{{ cantidadCarrito }}</b> - Cantidad de productos</p>
+                    <p class="col-md-6"><b>$ {{ totalCarrito }}</b> - Subtotal</p>
+                    <button class="btn btn-primary button" v-on:click="toggleShowCarrito">Ver carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Carrito -->
+        <div class="modal-wrapper" v-if="mostrarCarrito" v-on:click="toggleShowCarrito">
+            <div class="modal-content" v-on:click="modalClick">
+                <div class="col-12 mb-3" id="close-modal-container">
+                    <i id="close-modal" v-on:click="toggleShowCarrito" class="fa-solid fa-xmark p-3"></i>
+                </div>
+                <h2>Carrito</h2>
+                <p class="text-center" v-if="carrito.length == 0">El carrito está vacío</p>
+                <table v-if="carrito.length !== 0">
+                    <thead>
+                        <tr>
+                            <th>Imagen </th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="producto in carrito">
+                            <td><img id="carritoimg" v-bind:src="'./imgs/' + producto.img" :alt="producto.img_desc">
+                            </td>
+                            <td>{{producto.name}}</td>
+                            <td>{{producto.quantity}}</td>
+                            <td>$ {{producto.precio}}</td>
+                            <td>$ {{ producto.quantity * producto.precio }}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-primary button" v-on:click="removeAllFromCart">Vaciar Carrito</button>
+            </div>
+
+        </div>
+
+        <!-- Modal Detalle -->
+
+        <div class="modal-wrapper" v-if="mostrarDetails" v-on:click="toggleShowDetails">
+            <div class="modal-content" v-on:click="modalClick">
+                <div class="col-12 mb-3" id="close-modal-container">
+                    <i id="close-modal" v-on:click="toggleShowDetails" class="fa-solid fa-xmark p-3"></i>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 detallesDiv">
+                        <img id="modal-img" :src="'./imgs/' + productoDetails.img" :alt="productoDetails.img_desc">
+                    </div>
+                    <div class="col-12 col-md-6 detallesDiv">
+                        <h2 class="align-left" id="modal-title">{{productoDetails.name}}</h2>
+                        <p id="modal-text">{{productoDetails.description}}</p>
+                        <p class="precio align-left" id="modal-price">$ {{productoDetails.precio}}</p>
+                        <a href="#" id="modal-btn" class="btn btn-primary button" v-on:click="addToCartFromDetails(productoDetails.id)">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Modal Carga Productos -->
+
+        <div class="modal-wrapper" v-if="mostrarCargar" v-on:click="toggleShowCargar">
+            <div class="modal-content" v-on:click="modalClick">
+                <div class="col-12 mb-3" id="close-modal-container">
+                    <i id="close-modal" v-on:click="toggleShowCargar" class="fa-solid fa-xmark p-3"></i>
+                </div>
+                <div class="row">
+                    <h2>Cargar Producto</h2>
+                    <label class="mt-2" for="Nombre">Nombre</label>
+                    <input required v-model="productoIngresado.name" name="Nombre" id="Nombre" type="text">
+
+                    <label class="mt-2" for="Descripcion">Descripción</label>
+                    <textarea required  v-model="productoIngresado.description" name="Descripcion" id="Descripcion"></textarea>
+
+                    <label class="mt-2" for="Precio">Precio</label>
+                    <input required v-model="productoIngresado.precio" name="Precio" id="Precio" type="number">
+    
+                    <label class="mt-2" for="Img">Nombre de archivo de la Imagen</label>
+                    <input required v-model="productoIngresado.img" name="Img" id="Img" type="text">
+    
+                    <label class="mt-2" for="img_desc">Descripción de Imagen</label>
+                    <input required v-model="productoIngresado.img_desc" name="img_desc" id="img_desc" type="text">
+    
+                    <label class="mt-2" for="categoria">Categoría</label>
+                    <select required v-model="productoIngresado.categoria" name="categoria" id="categoria">
+                        <option v-for="categoria in categorias" :value="categoria">{{categoria}}</option>
+                    </select>
+        
+                    <input type="button" v-on:click="cargarProducto" value="Subir Producto" class="btn btn-primary button">
+
+                    <p class="text-danger text-center" v-for="error in formErrors">{{error}}</p>
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <section class="container-md">
+        <div class="row justify-content-center gx-5">
+            <div class="col-12 col-md-6 mt-auto mb-auto order-0">
+                <img src="./imgs/ContactUs.svg" alt="">
+            </div>
+            <div class="col-12 col-md-6 mt-auto mb-auto order-1">
+                <h2 class="align-left">Contactanos</h2>
+                <p>Necesitas ayuda con tu compra o tenés alguna pregunta? No dudes en contactarnos!</p>
+                <a href="https://wa.link/2s70zu" target="_blank" class="btn btn-primary button">Contactar</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="container-fluid pt-4 pb-4 bg-light">
+        <div class="container-md">
+            <div class="row">
+                <div class="col-12 col-md-6 d-flex">
+                    <img src="./imgs/Logo.png" class="logo" id="footerlogo" alt="Logo de ElectroShop">
+                </div>
+                <div class="col-12 col-md-6">
+                    <p class="align-center mt-3">Navegá nuestro sitio</p>
+                    <ul class="navbar-nav align-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#catalogo">Listado</a></li>
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                href="https://wa.link/2s70zu">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="footerPadding"></div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <script src="./js/vue.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>

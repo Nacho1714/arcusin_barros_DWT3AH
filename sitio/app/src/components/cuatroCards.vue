@@ -68,10 +68,10 @@
 export default {
     name: 'cuatroCards',
     props:{
-        imagen: String,
-        alt: String,
-        nombre: String,
-        precio: Number,
+        vinilos: {
+            type: Array,
+            required: true
+        }
 
     }
 }
