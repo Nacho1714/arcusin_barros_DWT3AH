@@ -1,7 +1,8 @@
 <template>
   <div>
     <siteHeader></siteHeader>
-    <router-view :vinilos="vinilos" @evento="(id) => agregarCarrito(id)"></router-view>
+    <router-view :vinilos="vinilos" @evento="(id) => agregarCarrito(id)"  ></router-view>
+    <!-- @sumar="() => this.total++" -->
     <siteFooter />
   </div>
 </template>

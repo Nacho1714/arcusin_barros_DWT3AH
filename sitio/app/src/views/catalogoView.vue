@@ -31,7 +31,6 @@
 
                         <catalogoFormulario></catalogoFormulario>
                 
-   
                     </div>
                     <div class="row">
                         
@@ -53,6 +52,7 @@
                                     <div class="d-flex flex-column justify-content-between" style="height: 140px;">
 
                                         <button @click="$emit('evento', vinilo.vinilo_id)" class="btn btn-success button">Añadir a Carrito</button>
+                                        <!-- <button @click="$emit('sumar')"></button> -->
                                         <button v-on:click="editar(index)" class="btn btn-primary button">Editar</button>
                                         <button v-on:click="eliminar(index)" class="btn btn-danger button">Borrar</button>
                                     </div>
@@ -81,10 +81,6 @@ export default {
             required: true
         }
     },
-    agregar: function(index){
-        this.$emit('loro', index);
-    }
-    // v-on:click="agregarCarrito(vinilo)"
 }
     
 
