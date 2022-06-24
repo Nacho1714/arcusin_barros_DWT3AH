@@ -1,0 +1,8 @@
+Carrera: Diseño y Desarrollo Web
+Materia: Aplicaciones para Dispositivos Móviles
+Cuatrimestre: 3º
+Año: 2022
+Comisión: DWT3AH
+Apellido y Nombre: Barros, Ignacio Ezequiel
+Docente: Jonathan Emanuel Cruz
+Carácter de entrega: 1º Parcial
