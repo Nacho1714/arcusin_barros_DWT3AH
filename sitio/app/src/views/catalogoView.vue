@@ -35,7 +35,7 @@
                     </div>
                     <div class="row">
                         
-                        <div class="col-lg-3 text-center mb-4" v-for="(vinilo, index) in vinilos" :key="vinilo.id">
+                        <div class="col-md-4 text-center mb-4" v-for="(vinilo, index) in vinilos" :key="vinilo.id">
 
                             <div class="card border-0 bg-light mb-2">
                             
@@ -50,9 +50,9 @@
 
                                     </a>
 
-                                    <div class="d-flex flex-column justify-content-between" style="height: 140px;">
+                                    <div class="d-flex flex-column justify-content-between">
 
-                                        <button @click="$emit('evento', vinilo.vinilo_id)" class="btn btn-success button">Añadir a Carrito</button>
+                                        <button @click="$emit('evento', vinilo.vinilo_id)" class="btn button btn-success button">Añadir a Carrito</button>
                                         <button v-on:click="editar(index)" class="btn btn-primary button">Editar</button>
                                         <button v-on:click="eliminar(index)" class="btn btn-danger button">Borrar</button>
                                     </div>

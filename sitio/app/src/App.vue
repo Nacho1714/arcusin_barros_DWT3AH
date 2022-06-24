@@ -272,6 +272,7 @@ export default {
 .btn3:hover {
   background-color: rgb(93, 36, 33);
   transition: 0.5s;
+  color: white;
 }
 .btn3 {
   display: inline-block;
@@ -287,6 +288,47 @@ export default {
   color: white;
   font-weight: 700;
   border-radius: 60px;
+}
+
+.button {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 5px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.card{
+  border-radius: 20px;
+}
+
+.card-body{
+  padding: 0;
+}
+
+.card-body img{
+  border-radius: 20px 20px 0 0;
+}
+
+.card-body a{
+  text-decoration: none;
+}
+
+.card-body a h5, .card-body a p{
+  margin: 0;
+  padding: 1% 5%;
+  color: #343a40;
+  text-decoration: none !important;
+}
+
+.card:hover {
+  box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75);
+  transition: 0.5s;
 }
 </style>
 

@@ -12,7 +12,7 @@
 
       <tbody>
         <!-- producto -->
-        <tr v-for="(vinilo, index) in carrito">
+        <tr v-for="(vinilo, index) in carrito" :key="vinilo.id">
           <td class="row">{{ index }}</td>
           <td class="table__productos">
             <img
