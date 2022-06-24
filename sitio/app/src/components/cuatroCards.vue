@@ -20,8 +20,8 @@
                   <img :src="vinilo.imagen" class="img-fluid" :alt="vinilo.img_alt" />
                 </picture>
 
-                <h5>{{vinilo.titulo}}</h5>
-                <p>{{vinilo.precio}}</p>
+                <h5 class="mt-1">{{vinilo.titulo}}</h5>
+                <p class="mb-2">${{vinilo.precio.toLocaleString("ES-AR")}}</p>
               </a>
             </div>
           </div>
@@ -49,9 +49,6 @@ export default {
 };
 </script>
 
-<style>
-.card:hover {
-  box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75);
-  transition: 0.5s;
-}
+<style scoped>
+
 </style>

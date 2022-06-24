@@ -34,7 +34,7 @@
                     </div>
                     <div class="row">
                         
-                        <div class="col-lg-3 text-center mb-4" v-for="(vinilo, index) in vinilos" :key="vinilo.id">
+                        <div class="col-md-4 text-center mb-4" v-for="(vinilo, index) in vinilos" :key="vinilo.id">
 
                             <div class="card border-0 bg-light mb-2">
                             
@@ -42,14 +42,14 @@
 
                                     <a href="#">
             
-                                        <img v-bind:src="vinilo.imagen" class="img-fluid" :alt="vinilo.img_alt">
+                                        <img v-bind:src="vinilo.imagen" class="w-100" :alt="vinilo.img_alt">
                                         
                                         <h3 class="h4">{{vinilo.titulo}}</h3>
-                                        <p>${{vinilo.precio}}</p>
+                                        <p class="precio">${{vinilo.precio.toLocaleString('ES-AR')}}</p>
 
                                     </a>
 
-                                    <div class="d-flex flex-column justify-content-between" style="height: 140px;">
+                                    <div class="d-flex flex-column justify-content-between">
 
                                         <button @click="$emit('evento', vinilo.vinilo_id)" class="btn btn-success button">Añadir a Carrito</button>
                                         <!-- <button @click="$emit('sumar')"></button> -->
@@ -90,5 +90,16 @@ export default {
   a{
     color: black;
     text-decoration: none;
+}
+
+.precio{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.h4{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 5px 0 0 0;
 }
 </style>
