@@ -43,10 +43,10 @@
 
                                     <a href="#">
             
-                                        <img v-bind:src="vinilo.imagen" class="img-fluid" :alt="vinilo.img_alt">
+                                        <img v-bind:src="vinilo.imagen" class="w-100" :alt="vinilo.img_alt">
                                         
                                         <h3 class="h4">{{vinilo.titulo}}</h3>
-                                        <p>${{vinilo.precio}}</p>
+                                        <p class="precio">${{vinilo.precio.toLocaleString('ES-AR')}}</p>
 
                                     </a>
 
@@ -94,5 +94,16 @@ export default {
   a{
     color: black;
     text-decoration: none;
+}
+
+.precio{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.h4{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 5px 0 0 0;
 }
 </style>
