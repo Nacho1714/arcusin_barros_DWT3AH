@@ -3,8 +3,6 @@
     <siteHeader></siteHeader>
     <router-view :vinilos="vinilos" @evento="(id) => agregarCarrito(id)" @eliminar="(index) => eliminarCarrito(index)" :carrito="carrito" :total="total" :cantidad="cantidad"></router-view>
     <!-- @sumar="() => this.total++" -->
-    <pre>{{$data}}</pre>
-
     <siteFooter />
   </div>
 </template>
@@ -32,7 +30,7 @@ export default {
       if (this.carrito.length != 0) {
         // carrito no vacio
         let bandera = false;
-        console.log('hay algo en el carro');
+        
         // Si el vinilo ya esta en el carrito, solo se incrementa la cantidad
         this.carrito.forEach((item) => {
           if (item.id == viniloid) {
@@ -75,7 +73,6 @@ export default {
         }
       } else {
 
-        console.log('vinilo nuevo');
         //carrito vacio
         this.carrito.push({
           id: viniloid,
@@ -249,107 +246,107 @@ export default {
 </script>
 
 <style>
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-.titulo {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-.subtitulo {
-  font-size: 1.3rem;
-  color: rgba(0, 0, 0, 0.7);
-}
-.btn0{
-    height: 40px;
-    width: 40%;
-    outline: none;
-    border: none;
-    background: rgb(141, 56, 52);
-    color: white;
-    border-radius: 60px;
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .titulo {
+    font-size: 2.5rem;
     font-weight: 700;
-}
+  }
+  .subtitulo {
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .btn0{
+      height: 40px;
+      width: 40%;
+      outline: none;
+      border: none;
+      background: rgb(141, 56, 52);
+      color: white;
+      border-radius: 60px;
+      font-weight: 700;
+  }
 
-.btn1 {
-  display: inline-block;
-  margin: 20px;
-  padding: 10px 0;
-  text-align: center;
-  height: 45px;
-  width: 35%;
-  border: none;
-  outline: none;
-  text-decoration: none;
-  background-color: rgb(141, 56, 52);
-  color: white;
-  font-weight: 700;
-  border-radius: 60px;
-}
-.btn0:hover,
-.btn1:hover,
-.btn3:hover {
-  background-color: rgb(93, 36, 33);
-  transition: 0.5s;
-  color: white;
-}
-.btn3 {
-  display: inline-block;
-  margin: 20px 20px 20px 0px;
-  padding: 10px 0;
-  text-align: center;
-  height: 45px;
-  width: 35%;
-  border: none;
-  outline: none;
-  text-decoration: none;
-  background-color: rgb(141, 56, 52);
-  color: white;
-  font-weight: 700;
-  border-radius: 60px;
-}
+  .btn1 {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 0;
+    text-align: center;
+    height: 45px;
+    width: 35%;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    background-color: rgb(141, 56, 52);
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+  }
+  .btn0:hover,
+  .btn1:hover,
+  .btn3:hover {
+    background-color: rgb(93, 36, 33);
+    transition: 0.5s;
+    color: white;
+  }
+  .btn3 {
+    display: inline-block;
+    margin: 20px 20px 20px 0px;
+    padding: 10px 0;
+    text-align: center;
+    height: 45px;
+    width: 35%;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    background-color: rgb(141, 56, 52);
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+  }
 
-.button {
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 5px;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+  .button {
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 5px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
 
-.card{
-  border-radius: 20px;
-}
+  .card{
+    border-radius: 20px;
+  }
 
-.card-body{
-  padding: 0;
-}
+  .card-body{
+    padding: 0;
+  }
 
-.card-body img{
-  border-radius: 20px 20px 0 0;
-}
+  .card-body img{
+    border-radius: 20px 20px 0 0;
+  }
 
-.card-body a{
-  text-decoration: none;
-}
+  .card-body a{
+    text-decoration: none;
+  }
 
-.card-body a h5, .card-body a p{
-  margin: 0;
-  padding: 1% 5%;
-  color: #343a40;
-  text-decoration: none !important;
-}
+  .card-body a h5, .card-body a p{
+    margin: 0;
+    padding: 1% 5%;
+    color: #343a40;
+    text-decoration: none !important;
+  }
 
-.card:hover {
-  box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75);
-  transition: 0.5s;
-}
+  .card:hover {
+    box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75);
+    transition: 0.5s;
+  }
 </style>
 

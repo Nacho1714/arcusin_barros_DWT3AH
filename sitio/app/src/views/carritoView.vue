@@ -1,7 +1,6 @@
 <template>
 
   <main class="container">
-    <pre>{{$data}}</pre>
 
     <table class="table table-striped mt-5">
 

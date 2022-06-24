@@ -1,8 +1,6 @@
 <template>
 
   <div class="d-flex justify-content-between mt-3">
-    
-    <pre>{{$data}}</pre>
 
     <div class="d-flex">
       <!-- <pre>{{$data}}</pre> -->
@@ -14,27 +12,20 @@
         placeholder="Buscar"
         aria-label="Search"
       />
-      <button v-on:click="buscar(vinilos)" class="btn0" type="button" value="Buscar">Buscar</button>
+      <button @click="$emit('filtrar', buscar(vinilos))" class="btn0" type="button" value="Buscar">Buscar</button>
     
     </div>
 
     <div>                
       <!-- v-on:change="buscar" -->
-      <select  v-model="categoria" class="form-select" name="Categorias">
-          <option disabled selected>Selecciona una opción</option>
-          <option value="5">Todos</option>
+      <select @change="$emit('filtrar', buscar(vinilos))" v-model="categoria" class="form-select" name="Categorias">
+          <!-- <option disabled selected>Selecciona una opción</option> -->
+          <option value="5" selected>Todos</option>
           <option value="1">Rap</option>
           <option value="2">Rock</option>
           <option value="3">Jazz</option>
           <option value="4">Menor Precio</option>
       </select>
-    </div>
-
-    <div class="form-check form-switch ms-3">
-
-      <input v-on:click="mostrarForm" type="checkbox" class="form-check-input" id="check1" v-model="form">
-      
-      <label for="check1" class="form-check-label">Agregar</label>
     </div>
 
   </div>
@@ -50,36 +41,48 @@
     methods: {
       buscar: function(vinilos){
 
-        // Filtro por menor precio
-        if (this.selectCat == 4) {
+        // Filtro por precio o por categoria
+        switch (this.categoria) {
+          case '4':
 
-          this.vinilos.forEach(vinilo => {
-              this.filtroCat.push(vinilo);
-          });
-
-          this.filtroCat.sort((a, b) => {
+            vinilos = vinilos.sort((a, b) => {
               if (a.precio > b.precio) {return 1};
               if (a.precio < b.precio) {return -1};
               return 0;
-          })
+            })
+            
+          break;
 
-          if (!(this.filtro == '')) {
-              this.filtroCat = [];
-              let filtro2 = this.vinilos.filter(vinilo => vinilo.titulo.toLowerCase().includes(this.filtro.toLowerCase()));
+          case '5':
 
-              filtro2.forEach(obj => {
-              this.filtroCat.push(obj);
-          });
-          }   
+            vinilos = vinilos;
+            
+          break;
+        
+          default:
+            
+            vinilos = vinilos.filter(vinilo => vinilo.vinilo_cat == this.categoria);
+          
+          break;
 
-        } 
+        }
+
+        // Filtro con Buscador
+        if ((vinilos.length > 0) && (!this.filtro == '')) {
+
+          vinilos = vinilos.filter(vinilo => vinilo.titulo.toLowerCase().includes(this.filtro.toLowerCase()));
+
+        }else if(!this.filtro == ''){
+          vinilos = vinilos.filter(vinilo => vinilo.titulo.toLowerCase().includes(this.filtro.toLowerCase()));
+        }
+
+        return vinilos;
       }
     },
     data() {
       return {
           filtro: '',
-          vinilosFiltrados: [],
-          categoria: null,
+          categoria: 5,
       };
     },
   };

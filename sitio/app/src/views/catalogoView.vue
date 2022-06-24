@@ -1,7 +1,5 @@
 <template>
   <main>
-    <pre>{{$data}}</pre>
-
         <section class="shop app">
 
             <div class="container">
@@ -14,25 +12,12 @@
 
                         <h2 class="subtitulo">Navega por nuestra gran variedad de vinilos</h2>
 
-                            <catalogo-buscador :vinilos="vinilos"></catalogo-buscador>
+                        <catalogo-buscador :vinilos="vinilos" @filtrar="(vinilosFiltrados) => {this.vinilosNuevos = vinilosFiltrados}"></catalogo-buscador>
                             
-<!--                         <div class="d-flex justify-content-between mt-3">
-       
-                            <div class="form-check form-switch ms-3">
-
-                                <input v-on:click="mostrarForm" type="checkbox" class="form-check-input" id="check1">
-                                <label for="check1" class="form-check-label">Agregar</label>
-
-                            </div>
-
-                        </div>
- -->
-                        <!-- <catalogoFormulario :form="form"></catalogoFormulario> -->
-                
                     </div>
                     <div class="row">
                         
-                        <div class="col-md-4 text-center mb-4" v-for="(vinilo, index) in vinilos" :key="vinilo.id">
+                        <div class="col-md-4 text-center mb-4" v-for="(vinilo, index) in vinilosFinales" :key="vinilo.id">
 
                             <!-- Carta -->
                             <div class="card border-0 bg-light mb-2">
@@ -71,7 +56,7 @@
     import catalogoBuscador from '../components/catalogoBuscador.vue'
     import catalogoCategorias from '../components/catalogoCategorias.vue'
     import catalogoFormulario from '../components/catalogoFormulario.vue'
-
+    
     export default {
         name: 'catalogoView',
         components: {
@@ -79,17 +64,18 @@
             catalogoCategorias,
             catalogoFormulario
         },
+        computed: {
+            vinilosFinales() {
+                return this.vinilosNuevos.length > 0 ? this.vinilosNuevos : this.vinilos;
+            },
+        },
         props: {
             vinilos: Array
-        },
-        methods: {
-            mostrarForm: function(){
-                this.form = !this.form;
-            },
         },
         data() {
             return {
                 form: false,
+                vinilosNuevos: [], 
             };
         },
     }
