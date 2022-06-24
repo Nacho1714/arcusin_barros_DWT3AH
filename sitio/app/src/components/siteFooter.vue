@@ -11,8 +11,7 @@
 
                         <div class="col-lg-9">
 
-                            <!-- <h2>¿Quieres enterarte que hay de nuevo?</h2> -->
-                            <h2>{{titulo}}</h2>
+                            <h2>¿Quieres enterarte que hay de nuevo?</h2>
 
                             <input type="text" class="px-3" placeholder="Ingresa tu Email">
 
@@ -54,12 +53,50 @@
 <script>
 export default {
     name: 'siteFooter',
-    props: {
-        titulo: String
-    }
 }
 </script>
 
-<style>
-
+<style scoped>
+    .cnt-footer{
+    background-color: black;
+    color: white;
+    }
+    .btn2{
+        height: 45px;
+        width: 100px;
+        background: white;
+        margin-left: -10px;
+        border: 2px solid white;
+        font-weight: 600;
+    }
+    .cnt-footer input{
+        height: 45px;
+        width: 55%;
+        border: 2px solid white;
+        outline: none;
+        background: black;
+        color: white;
+        margin-top: 20px;
+        font-weight: 600;
+    }
+    .cnt-footer::placeholder{
+        color: white;
+    }
+    .cnt-footer p{
+        margin: 0;
+    }
+    footer .col-lg-3:nth-child(1) a,
+    footer .col-lg-3:nth-child(2) a,
+    footer .col-lg-3:nth-child(3) a{
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+    .fab{
+    font-size: 2.5rem;
+    cursor: pointer;
+    padding-right: 5px;
+    text-decoration: none;
+    color: white;
+    }
 </style>
