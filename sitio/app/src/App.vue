@@ -1,7 +1,16 @@
 <template>
   <div>
     <siteHeader></siteHeader>
-    <router-view :vinilos="vinilos" @evento="(id) => agregarCarrito(id)" @eliminar="(index) => eliminarCarrito(index)" :carrito="carrito" :total="total" :cantidad="cantidad"></router-view>
+    <router-view
+      :vinilos="vinilos" @evento="(id) => agregarCarrito(id)"
+      @eliminar="(index) => eliminarCarrito(index)"
+      @viniloEditado="(vinilo) => editar(vinilo)"
+      @viniloNuevo="(vinilo) => agregar(vinilo)"
+      :carrito="carrito"
+      :total="total"
+      :cantidad="cantidad">
+      
+    </router-view>
     <!-- @sumar="() => this.total++" -->
     <pre>{{$data}}</pre>
 
@@ -116,7 +125,25 @@ export default {
       this.carrito.splice(i,1);
       localStorage.setItem('vinilos', JSON.stringify(this.carrito));
 
-      },
+    },
+    editar: function(vinilo){
+      this.vinilos[vinilo.vinilo_id].titulo = vinilo.titulo;
+      this.vinilos[vinilo.vinilo_id].vinilo_cat = vinilo.vinilo_cat;
+      this.vinilos[vinilo.vinilo_id].precio = vinilo.precio;
+      this.vinilos[vinilo.vinilo_id].imagen = vinilo.imagen;
+      this.vinilos[vinilo.vinilo_id].img_alt = vinilo.img_alt;
+    },
+    agregar: function(vinilo){
+      this.vinilos.push({
+        vinilo_id: vinilo.vinilo_id,
+        titulo: vinilo.titulo,
+        vinilo_cat: vinilo.vinilo_cat,
+        precio: vinilo.precio,
+        imagen: vinilo.imagen,
+        img_alt: vinilo.img_alt,
+      });
+    }
+    
 
   },
 

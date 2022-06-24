@@ -27,7 +27,13 @@
 
                         </div>
  -->
-                        <!-- <catalogoFormulario :form="form"></catalogoFormulario> -->
+                        <catalogoFormulario
+                            :formProp="form"
+                            :viniloEditar="viniloEditar"
+                            @viniloEditado="(vinilo)=> $emit('viniloEditado', vinilo)"
+                            @viniloNuevo="(vinilo)=> $emit('viniloNuevo', vinilo)">
+
+                        </catalogoFormulario>
                 
                     </div>
                     <div class="row">
@@ -83,15 +89,18 @@
             vinilos: Array
         },
         methods: {
-            mostrarForm: function(){
-                this.form = !this.form;
+            editar: function(index){
+                this.form = true;
+                this.viniloEditar = this.vinilos[index];              
             },
         },
         data() {
             return {
                 form: false,
+                viniloEditar: {}
             };
         },
+
     }
     
 </script>

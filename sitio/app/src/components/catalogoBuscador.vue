@@ -30,12 +30,12 @@
       </select>
     </div>
 
-    <div class="form-check form-switch ms-3">
+    <!-- <div class="form-check form-switch ms-3">
 
       <input v-on:click="mostrarForm" type="checkbox" class="form-check-input" id="check1" v-model="form">
       
       <label for="check1" class="form-check-label">Agregar</label>
-    </div>
+    </div> -->
 
   </div>
 
