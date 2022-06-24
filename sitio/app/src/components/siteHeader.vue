@@ -2,7 +2,7 @@
     <header>
         <nav class=" container navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <img src="../assets/logo.png" alt="" width="" height="" class="d-inline-block align-text-top">
                     Play Vinilo'S
                 </a>
