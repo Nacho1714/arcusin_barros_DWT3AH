@@ -1,12 +1,23 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div>
+    <siteHeader></siteHeader>
   </div>
 </template>
+
+
+
+<script>
+  import siteHeader from './components/siteHeader.vue';
+  import 'bootstrap';
+  import 'bootstrap/dist/css/bootstrap.min.css';
+
+  export default {
+    name: 'App',
+    components: {
+      siteHeader
+    }
+  }
+</script>
 
 <style>
 #app {
