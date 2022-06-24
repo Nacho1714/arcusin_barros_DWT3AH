@@ -3,26 +3,23 @@
         <nav class=" container navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="img/logo.png" alt="" width="" height="" class="d-inline-block align-text-top">
+                    <img src="../assets/logo.png" alt="" width="" height="" class="d-inline-block align-text-top">
                     Play Vinilo'S
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarScroll">
                     <ul class="navbar-nav text-center">
                         <li class="nav-item">
-                            <router-link to="/">Inicio</router-link> 
+                            <router-link class="nav-link" to="/">Inicio</router-link> 
                         </li>
                         <li class="nav-item">
-                            <router-link to="/catalogo">Catálogo</router-link> 
+                            <router-link class="nav-link" to="/catalogo">Catálogo</router-link> 
                         </li>
                         <li class="nav-item">
-                            <router-link to="/contacto">Contacto</router-link> 
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/carrito">Carrito</router-link> 
+                            <router-link class="nav-link" to="/carrito">Carrito</router-link> 
                         </li>
                     </ul>
                 </div>
@@ -33,18 +30,19 @@
 
 <script>
 export default {
-
+    name: 'siteHeader'
 }
 </script>
 
-<style>
-    header{
+<style scoped>
+header{
     border-bottom: 2px solid black;
 }
 .navbar-brand{
-    font-size: 2rem;
+    font-size: 2em; 
     color: black;
     font-family: 'Lobster', cursive;
+    padding-bottom: 0.6rem;;
 }
 .navbar-brand:hover{
     color: black;
@@ -52,15 +50,44 @@ export default {
 .nav-link{
     margin-right: 10px;
     margin-left: 10px;
-    color: black;
+    position: relative;
+    color: rgb(43, 43, 43);
     font-family: 'Rubik', sans-serif;
+    transition: none; 
+}
+.nav-link:hover{
+    color: rgb(0, 0, 0);
+}
+.nav-link::after{
+    content: "";
+    position: absolute;
+    background-color: rgb(141, 56, 52);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -3px;
+
+}
+.nav-link:hover:after{
+    width: 100%;
+    transition: .3s;
 }
 .navbar-expand-lg .navbar-nav .nav-link{
-    padding-left: 6.5rem;
     font-weight: 550;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
-.navbar-expand-lg:hover .navbar-nav:hover .nav-link:hover{
-    color: rgb(141, 56, 52);
+
+@media  screen and (max-width: 960px){
+    .nav-link{
+        border-top: rgba(141, 56, 52, 0.103) 1px solid;
+        border-bottom: rgba(141, 56, 52, 0.103) 1px solid;
+    }
+    .nav-link:hover{
+        background-color: rgb(141, 56, 52);
+        color: #f0f0f0;
+    }
+    .nav-link::after{
+        content: none;
+    }
 }
 </style>
