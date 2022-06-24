@@ -1,8 +1,10 @@
 <template>
   <div>
     <siteHeader></siteHeader>
-    <router-view :vinilos="vinilos" @evento="(id) => agregarCarrito(id)"  ></router-view>
+    <router-view :vinilos="vinilos" @evento="(id) => agregarCarrito(id)" @eliminar="(index) => eliminarCarrito(index)" :carrito="carrito" :total="total" :cantidad="cantidad"></router-view>
     <!-- @sumar="() => this.total++" -->
+    <pre>{{$data}}</pre>
+
     <siteFooter />
   </div>
 </template>
@@ -26,12 +28,11 @@ export default {
 
   methods: {
     agregarCarrito: function (viniloid) {
-      console.log('agrego' + viniloid);
+
       if (this.carrito.length != 0) {
         // carrito no vacio
         let bandera = false;
-
-
+        console.log('hay algo en el carro');
         // Si el vinilo ya esta en el carrito, solo se incrementa la cantidad
         this.carrito.forEach((item) => {
           if (item.id == viniloid) {
@@ -44,7 +45,6 @@ export default {
 
         if (bandera == false) {
           //carrito lleno, no tiene el vinilo
-          console.log("agrego");
           this.carrito.push({
             id: viniloid,
             titulo: this.vinilos[viniloid].titulo,
@@ -63,16 +63,20 @@ export default {
         // Sumo el total de los precios de vinilos que agregue al carrito
         if (this.carrito.length > 0) {
           this.total = 0;
+          this.cantidad = 0;
           this.carrito.forEach((item) => {
             this.total += item.precio * item.cantidad;
+            this.cantidad += item.cantidad;
           });
 
           // guardo el total en el LocalStorage
           localStorage.setItem("total", JSON.stringify(this.total));
+          localStorage.setItem("cantidad", JSON.stringify(this.cantidad));
         }
       } else {
+
+        console.log('vinilo nuevo');
         //carrito vacio
-        console.log("agrego");
         this.carrito.push({
           id: viniloid,
           titulo: this.vinilos[viniloid].titulo,
@@ -89,15 +93,31 @@ export default {
         // Sumo el total de los precios de vinilos que agregue al carrito
         if (this.carrito.length > 0) {
           this.total = 0;
+          this.cantidad = 0;
           this.carrito.forEach((item) => {
             this.total += item.precio * item.cantidad;
+            this.cantidad += item.cantidad;
           });
 
           // guardo el total en el LocalStorage
           localStorage.setItem("total", JSON.stringify(this.total));
+          localStorage.setItem("cantidad", JSON.stringify(this.cantidad));
         }
       }
     },
+    eliminarCarrito: function(i){
+
+      this.total -= (this.carrito[i].precio * this.carrito[i].cantidad);
+      localStorage.setItem('total', JSON.stringify(this.total));
+
+      this.cantidad -= this.carrito[i].cantidad;
+      localStorage.setItem('cantidad', JSON.stringify(this.cantidad));
+
+      this.carrito.splice(i,1);
+      localStorage.setItem('vinilos', JSON.stringify(this.carrito));
+
+      },
+
   },
 
   created() {
@@ -110,7 +130,7 @@ export default {
     return {
       carrito: [],
       total: 0,
-
+      cantidad: 0,
       // filtro: '',
 
       vinilos: [

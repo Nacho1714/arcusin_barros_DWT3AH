@@ -79,19 +79,24 @@
                 <tr v-for="(vinilo, index) in carrito">
 
                     <td class="row">{{index}}</td>
+
                     <td class="table__productos">
                         <img v-bind:src="'./../'+vinilo.imagen" v-bind:alt="vinilo.img_alt">
                         <h6 class="title">{{vinilo.titulo}}</h6>
                     </td>
+
                     <td class="table__precio">
                         <p>${{vinilo.precio}}</p>
                     </td>
+
                     <td class="table__cantidad text-center">
                         <input type="number" min="1" v-bind:value="vinilo.cantidad" disabled>
                     </td>
+
                     <td>
                         <button v-on:click="eliminarCarrito(index)" class="delete btn btn-danger">x</button>
                     </td>
+                    
                 </tr>
     
             </tbody>

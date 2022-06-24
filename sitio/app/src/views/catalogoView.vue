@@ -1,5 +1,6 @@
 <template>
   <main>
+    <pre>{{$data}}</pre>
 
         <section class="shop app">
 
@@ -13,29 +14,27 @@
 
                         <h2 class="subtitulo">Navega por nuestra gran variedad de vinilos</h2>
 
-                        <div class="d-flex justify-content-between mt-3">
+                            <catalogo-buscador :vinilos="vinilos"></catalogo-buscador>
+                            
+<!--                         <div class="d-flex justify-content-between mt-3">
        
-                            <catalogo-buscador></catalogo-buscador>
-
-                            <catalogo-categorias></catalogo-categorias>
-
-                            <!-- Agregar -->
                             <div class="form-check form-switch ms-3">
 
-                                <input v-on:click="mostrarForm" type="checkbox" class="form-check-input" id="check1" v-model="form">
+                                <input v-on:click="mostrarForm" type="checkbox" class="form-check-input" id="check1">
                                 <label for="check1" class="form-check-label">Agregar</label>
 
                             </div>
 
                         </div>
-
-                        <catalogoFormulario></catalogoFormulario>
+ -->
+                        <!-- <catalogoFormulario :form="form"></catalogoFormulario> -->
                 
                     </div>
                     <div class="row">
                         
                         <div class="col-md-4 text-center mb-4" v-for="(vinilo, index) in vinilos" :key="vinilo.id">
 
+                            <!-- Carta -->
                             <div class="card border-0 bg-light mb-2">
                             
                                 <div class="card-body">
@@ -58,48 +57,59 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>                
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
 </template>
 
 <script>
-import catalogoBuscador from '../components/catalogoBuscador.vue'
-import catalogoCategorias from '../components/catalogoCategorias.vue'
-export default {
-    name: 'catalogoView',
-    components: {
-        catalogoBuscador,
-        catalogoCategorias
-    },
-    props: {
-        vinilos: {
-            type: Array,
-            required: true
-        }
-    },
-}
-    
+    import catalogoBuscador from '../components/catalogoBuscador.vue'
+    import catalogoCategorias from '../components/catalogoCategorias.vue'
+    import catalogoFormulario from '../components/catalogoFormulario.vue'
 
+    export default {
+        name: 'catalogoView',
+        components: {
+            catalogoBuscador,
+            catalogoCategorias,
+            catalogoFormulario
+        },
+        props: {
+            vinilos: Array
+        },
+        methods: {
+            mostrarForm: function(){
+                this.form = !this.form;
+            },
+        },
+        data() {
+            return {
+                form: false,
+            };
+        },
+    }
+    
 </script>
 
 <style scoped>
-  a{
-    color: black;
-    text-decoration: none;
-}
+    a{
+        color: black;
+        text-decoration: none;
+    }
 
-.precio{
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+    .precio{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
 
-.h4{
-    font-size: 1.5rem;
-    font-weight: bolder;
-    margin: 5px 0 0 0;
-}
+    .h4{
+        font-size: 1.5rem;
+        font-weight: bolder;
+        margin: 5px 0 0 0;
+    }
 </style>

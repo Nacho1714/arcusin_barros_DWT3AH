@@ -1,5 +1,6 @@
 <template>
   <div
+
     v-bind:class="{
       'd-none justify-content-center mt-5': form == false,
       'd-flex justify-content-center mt-5': form,
@@ -56,14 +57,31 @@
           Guardar
         </button>
       </div>
+
     </div>
+
   </div>
+
 </template>
 
 <script>
 export default {
     name: 'catalogoFormulario',
+    props: {
+      form: Boolean,
+      titulo: String,
+      categoria: Number,
+      precio: Number,
+      url: String,
+      descrip: String,
     
+    },
+
+    
+
+
+
+
 };
 </script>
 
