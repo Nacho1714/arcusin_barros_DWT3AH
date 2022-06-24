@@ -257,7 +257,7 @@ const appVinilos = new Vue({
         },
         editar: function(index){
 
-            console.log(`Carrito: ${item.titulo} - ${item.id} = Vinilos: ${vinilo.titulo} - ${vinilo.vinilo_id}`);
+            // console.log(`Carrito: ${item.titulo} - ${item.id} = Vinilos: ${vinilo.titulo} - ${vinilo.vinilo_id}`);
 
             this.foco = parseInt(index);
 
@@ -332,7 +332,7 @@ const appVinilos = new Vue({
             }
         },
         agregarCarrito: function(vinilo) {
-            
+            console.log(this.carrito)
             if (this.carrito.length != 0) {
                 // carrito lleno, sumo si esta
                 let bandera = false;
