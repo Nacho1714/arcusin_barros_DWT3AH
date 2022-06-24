@@ -100,7 +100,7 @@
                     </div>
                     <div class="row">
                         
-                        <div class="col-lg-3 text-center mb-4" v-for="(vinilo, index) in vinilos">
+                        <div class="col-lg-3 text-center mb-4" v-for="(vinilo, index) in vinilos" :key="vinilo.id">
 
                             <div class="card border-0 bg-light mb-2">
                             

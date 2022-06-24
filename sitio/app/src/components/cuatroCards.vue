@@ -46,16 +46,6 @@ export default {
       required: true,
     },
   },
-//   data() {
-//     return {
-//       cuatroVinilos: [],
-//     };
-//   },
-//   computed: {
-//     vinilosDestacados() {
-//       this.cuatroVinilos = this.vinilos.filter((vinilo) => vinilo.destacado);
-//     },
-//   },
 };
 </script>
 
