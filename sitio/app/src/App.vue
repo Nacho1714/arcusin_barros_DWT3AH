@@ -113,6 +113,8 @@ export default {
     },
     eliminarCarrito: function(i){
 
+      console.log(`Total:${this.total} = ${this.carrito[i].precio} * ${this.carrito[i].cantidad}`);
+
       this.total -= (this.carrito[i].precio * this.carrito[i].cantidad);
       localStorage.setItem('total', JSON.stringify(this.total));
 
@@ -145,9 +147,9 @@ export default {
   },
 
   created() {
-    this.carrito = localStorage.getItem("vinilos")
-      ? JSON.parse(localStorage.getItem("vinilos"))
-      : [];
+    this.carrito = localStorage.getItem("vinilos") ? JSON.parse(localStorage.getItem("vinilos")) : [];
+    this.total = localStorage.getItem("total") ? JSON.parse(localStorage.getItem("total")) : [];
+      this.cantidad = localStorage.getItem("cantidad") ? JSON.parse(localStorage.getItem("cantidad")) : [];
   },
 
   data() {

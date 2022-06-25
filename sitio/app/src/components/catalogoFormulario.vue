@@ -118,7 +118,7 @@
         </div>
 
         <div class="col-md-6 w-100">
-          <button @click="$emit('viniloEditado', viniloEditar); ToggleFormProp()" class="btn btn-primary" type="button">
+          <button @click="$emit('viniloEditado', viniloEditar); formEditar" class="btn btn-primary" type="button">
             Guardar
           </button>
         </div>
@@ -156,18 +156,20 @@ export default {
     };
   },
   computed: {
-   
+      formEditar() {
+          return this.formProp ? false : true;
+      },
   },
   methods: {
-    toggleForm: function () {
+/*     toggleForm: function () {
       // console.log("toggleForm");
       this.form = !this.form;
-    },
+    }, */
 
-    ToggleFormProp: function () {
+/*     ToggleFormProp: function () {
       // console.log("toggleForm");
       this.formProp = !this.formProp;
-    },
+    }, */
 
     agregar: function () {
       // this.vinilos.push(this.vinilo);

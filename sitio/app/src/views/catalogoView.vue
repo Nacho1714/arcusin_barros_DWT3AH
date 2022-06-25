@@ -73,14 +73,12 @@
 
 <script>
     import catalogoBuscador from '../components/catalogoBuscador.vue'
-    import catalogoCategorias from '../components/catalogoCategorias.vue'
     import catalogoFormulario from '../components/catalogoFormulario.vue'
     
     export default {
         name: 'catalogoView',
         components: {
             catalogoBuscador,
-            catalogoCategorias,
             catalogoFormulario
         },
         computed: {
