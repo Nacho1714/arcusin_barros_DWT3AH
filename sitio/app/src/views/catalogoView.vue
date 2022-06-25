@@ -28,10 +28,7 @@
                         <catalogoFormulario
                             :formProp="form"
                             :viniloEditar="viniloEditar"
-                            @viniloEditado="(vinilo)=> {
-                                $emit('viniloEditado', vinilo);
-                                dejarDeEditar()
-                                }"
+                            @viniloEditado="(vinilo)=> $emit('viniloEditado', vinilo)"
                             @viniloNuevo="(vinilo)=> $emit('viniloNuevo', vinilo)">
 
                         </catalogoFormulario>
@@ -96,10 +93,6 @@
             editar: function(index){
                 this.form = true;
                 this.viniloEditar = this.vinilos[index];              
-            },
-            dejarDeEditar: function(){
-                this.form = false;
-                this.viniloEditar = {};
             },
         },
         data() {

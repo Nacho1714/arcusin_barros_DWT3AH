@@ -131,7 +131,6 @@ export default {
       this.vinilos[vinilo.vinilo_id].precio = vinilo.precio;
       this.vinilos[vinilo.vinilo_id].imagen = vinilo.imagen;
       this.vinilos[vinilo.vinilo_id].img_alt = vinilo.img_alt;
-      localStorage.setItem('productos', JSON.stringify(this.vinilos));
     },
     agregar: function(vinilo){
       this.vinilos.push({
@@ -142,7 +141,6 @@ export default {
         imagen: vinilo.imagen,
         img_alt: vinilo.img_alt,
       });
-      localStorage.setItem('productos', JSON.stringify(this.vinilos));
     }
     
 
@@ -154,13 +152,15 @@ export default {
       this.cantidad = localStorage.getItem("cantidad") ? JSON.parse(localStorage.getItem("cantidad")) : [];
   },
 
-    // crear vinilos (productos)
+  data() {
+    return {
+      carrito: [],
+      total: 0,
+      cantidad: 0,
+      // filtro: '',
 
-    this.vinilos = localStorage.getItem("productos") ?
-    JSON.parse(localStorage.getItem("productos"))
-    : //else cargo los vinilos
-    [
-      {
+      vinilos: [
+        {
           vinilo_id: 0,
           vinilo_cat: 1,
           destacado: true,
@@ -268,18 +268,7 @@ export default {
           imagen: require("@/assets/big-miles.jpg"),
           img_alt: "Vinilo Pangea, Miles Davis",
         },
-    ];
-
-  },
-
-  data() {
-    return {
-      carrito: [],
-      total: 0,
-      cantidad: 0,
-      // filtro: '',
-
-      vinilos: [],
+      ],
     };
   },
 };
