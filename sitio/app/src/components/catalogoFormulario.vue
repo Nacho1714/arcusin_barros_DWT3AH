@@ -118,7 +118,7 @@
         </div>
 
         <div class="col-md-6 w-100">
-          <button @click="$emit('viniloEditado', viniloEditar); formEditar" class="btn btn-primary" type="button">
+          <button @click="$emit('viniloEditado', viniloEditar);" class="btn btn-primary" type="button">
             Guardar
           </button>
         </div>
@@ -136,11 +136,6 @@ export default {
   props: {
     formProp: Boolean,
     viniloEditar: Object
-    // titulo: String,
-    // categoria: Number,
-    // precio: Number,
-    // url: String,
-    // descrip: String,
   },
   data() {
     return {
@@ -154,27 +149,6 @@ export default {
         img_alt: "",
       },
     };
-  },
-  computed: {
-      formEditar() {
-          return this.formProp ? false : true;
-      },
-  },
-  methods: {
-/*     toggleForm: function () {
-      // console.log("toggleForm");
-      this.form = !this.form;
-    }, */
-
-/*     ToggleFormProp: function () {
-      // console.log("toggleForm");
-      this.formProp = !this.formProp;
-    }, */
-
-    agregar: function () {
-      // this.vinilos.push(this.vinilo);
-      // this.formData = false;
-    },
   },
 };
 </script>
