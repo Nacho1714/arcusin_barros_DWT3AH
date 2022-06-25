@@ -112,7 +112,7 @@ export default {
       }
     },
     eliminarCarrito: function(i){
-
+      //comentario
       console.log(`Total:${this.total} = ${this.carrito[i].precio} * ${this.carrito[i].cantidad}`);
 
       this.total -= (this.carrito[i].precio * this.carrito[i].cantidad);
