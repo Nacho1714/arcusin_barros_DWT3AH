@@ -99,8 +99,9 @@
 
     },
 
-    // computed: {
-
+    // created: () {
+    // // this.total = localStorage.getItem("total") ? JSON.parse(localStorage.getItem("total")) : [];
+    // // this.cantidad = localStorage.getItem("cantidad") ? JSON.parse(localStorage.getItem("cantidad")) : [];
     // },
 
   };

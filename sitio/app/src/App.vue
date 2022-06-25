@@ -157,6 +157,10 @@ export default {
       ? JSON.parse(localStorage.getItem("vinilos"))
       : [];
 
+    this.total = localStorage.getItem("total") ? JSON.parse(localStorage.getItem("total")) : [];
+    this.cantidad = localStorage.getItem("cantidad") ? JSON.parse(localStorage.getItem("cantidad")) : [];
+
+
     // crear vinilos (productos)
 
     this.vinilos = localStorage.getItem("productos") ?
