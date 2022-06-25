@@ -129,6 +129,7 @@ export default {
       this.vinilos[vinilo.vinilo_id].precio = vinilo.precio;
       this.vinilos[vinilo.vinilo_id].imagen = vinilo.imagen;
       this.vinilos[vinilo.vinilo_id].img_alt = vinilo.img_alt;
+      
     },
     agregar: function(vinilo){
       this.vinilos.push({
