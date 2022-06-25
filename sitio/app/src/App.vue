@@ -4,8 +4,6 @@
     <router-view
       :vinilos="vinilos" @evento="(id) => agregarCarrito(id)"
       @eliminar="(index) => eliminarCarrito(index)"
-
-      @viniloEliminar="(index) => eliminarVinilo(index)"
       @viniloEditado="(vinilo) => editar(vinilo)"
       @viniloNuevo="(vinilo) => agregar(vinilo)"
       :carrito="carrito"
@@ -144,10 +142,6 @@ export default {
         imagen: vinilo.imagen,
         img_alt: vinilo.img_alt,
       });
-      localStorage.setItem('productos', JSON.stringify(this.vinilos));
-    },
-    eliminarVinilo: function(index){
-      this.vinilos.splice(index,1);
       localStorage.setItem('productos', JSON.stringify(this.vinilos));
     }
     

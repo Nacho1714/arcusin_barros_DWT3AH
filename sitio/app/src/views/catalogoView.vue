@@ -60,7 +60,7 @@
                                         <button @click="$emit('evento', vinilo.vinilo_id)" class="btn btn-success button">Añadir a Carrito</button>
                                         <!-- <button @click="$emit('sumar')"></button> -->
                                         <button v-on:click="editar(index)" class="btn btn-primary button">Editar</button>
-                                        <button @click="$emit('viniloEliminar', index)" class="btn btn-danger button">Borrar</button>
+                                        <button v-on:click="eliminar(index)" class="btn btn-danger button">Borrar</button>
                                     </div>
                                 </div>
                             </div>
